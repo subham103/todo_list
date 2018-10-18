@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form id="form">
+	<input value="add something.." id="input">
+	<button type="button" id="btn" onclick="add_item()">ADD</button>
+	</form>
+	<p id="mod">
+		<ul id="list">
+			
+		</ul>
+	</p>
+	<script>
+		var text="",temp=0;
+		//console.log(x);
+		function add_item(){
+			console.log(temp,"temp");
+			temp++;
+			text = document.getElementById('list').innerHTML;
+			var x = document.getElementById("input").value;
+			text += `<li id="list_${temp}">` + x + `<button type=\"button\" onclick="rem_item('list_${temp}')">remove</button></li>` ;
+			document.getElementById('list').innerHTML=text;
+			//document.getElementById(`btn_${temp}`).addEventListener("click", rem_item);
+			//console.log(`${temp}`+"tada");
+			}
+			
+			function rem_item(z){
+				var y=document.getElementById(z);
+				y.parentNode.removeChild(y);
+				// text = `<li id="list_${c}">` + a + `<button type=\"button\" onclick="rem_item('${a}','list_${c}')">remove</button></li>` ;
+				//temp--;
+			}
+	</script>
+</body>
+</html>
